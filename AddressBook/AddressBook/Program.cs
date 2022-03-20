@@ -6,13 +6,12 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            UC_1_Program uc_3 = new UC_1_Program();
-            uc_3.Display();
-            Console.WriteLine("Enter First name to Edit that particular Item: ");
+            UC_1_Program uc_4 = new UC_1_Program();
+            uc_4.Display();
+            Console.WriteLine("Enter First name to Delete Item: ");
             string name = Console.ReadLine();
-            uc_3.EditPersonDetail(name);
-            uc_3.Display();
-
+            uc_4.RemovePersonDetail(name);
+            uc_4.Display();
 
         }
     }

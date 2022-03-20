@@ -72,7 +72,7 @@ namespace AddressBook
                     Console.WriteLine("Enter State: ");
                     person[i].State = Console.ReadLine();
                     Console.WriteLine("Enter pin code: ");
-                    person[i].Zip= int.Parse(Console.ReadLine());
+                    person[i].Zip = int.Parse(Console.ReadLine());
                     Console.WriteLine("Enter Phone Number: ");
                     person[i].PhoneNumber = long.Parse(Console.ReadLine());
                     Console.WriteLine("Enter Email id: ");
@@ -82,9 +82,21 @@ namespace AddressBook
             string jsonData = JsonConvert.SerializeObject(person);
             File.WriteAllText(@"D:\Bridgelabz\Visual Studio Assignment\Address-Book-Management\Address-Book-Management\AddressBook\AddressBook\Details.json", jsonData);
         }
+        public void RemovePersonDetail(string First_Name)
+        {
+            PersonDetail pers = null;
+            foreach (PersonDetail p in person)
+            {
+                if (p.FirstName == First_Name)
+                {
+                    pers = p;
+                }
+            }
+            person.Remove(pers);
+            string jsonData = JsonConvert.SerializeObject(person);
+            File.WriteAllText(@"D:\Bridgelabz\Visual Studio Assignment\Address-Book-Management\Address-Book-Management\AddressBook\AddressBook\Details.json", jsonData);
+
+        }
+
     }
-
-   
-
-
 }
